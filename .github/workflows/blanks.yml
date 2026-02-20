@@ -1,0 +1,16 @@
+name: create cicd application
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-slim
+    steps:
+      - run: echo "heelo pratik"
+      - run: echo "kya kr rhe"
