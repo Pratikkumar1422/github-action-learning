@@ -1,0 +1,9 @@
+name: write name
+on:
+  worksflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - run: echo "hello pratik"
+      - run: echo "how are you"
