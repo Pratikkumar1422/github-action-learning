@@ -18,4 +18,4 @@ jobs:
     runs-on: ubuntu-slim
     steps:
       - run: echo "using secret"
-      - run: "${{secrets.NAME}}"
+      - run: echo "${{secrets.NAME}}"
