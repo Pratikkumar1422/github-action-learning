@@ -24,6 +24,11 @@ jobs:
     steps:
       - run: echo "using secret"
       - run: echo "${{secrets.NAME}}"
+      - name: instal node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: node --version
   deploy:
     runs-on: ubuntu-slim
     steps:
