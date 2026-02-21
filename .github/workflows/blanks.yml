@@ -7,6 +7,9 @@ on:
     branches:
       - main
   workflow_dispatch:
+env:
+  AWS_REGION: "eu-west-1"
+  ECS_REPOSITORY: "${{vars.REPO_NAME}}"
 
 jobs:
   build:
@@ -19,3 +22,9 @@ jobs:
     steps:
       - run: echo "using secret"
       - run: echo "${{secrets.NAME}}"
+  deploy:
+    runs-on: ubuntu-slim
+    steps:
+      - run: echo "using environment variable"
+      - run: echo "region is $AWS_REGION"
+      - run: echo "repository is $ECS_REPOSITORY"
