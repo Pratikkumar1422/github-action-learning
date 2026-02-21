@@ -14,3 +14,8 @@ jobs:
     steps:
       - run: echo "heelo pratik"
       - run: echo "kya kr rhe"
+  test:
+    runs-on: ubuntu-slim
+    steps:
+      - run: echo "using secret"
+      - run: "${{secrets.NAME}}
