@@ -21,6 +21,7 @@ jobs:
       - run: echo "kya kr rhe"
   test:
     runs-on: ubuntu-slim
+    needs: build
     steps:
       - run: echo "using secret"
       - run: echo "${{secrets.NAME}}"
@@ -34,6 +35,7 @@ jobs:
           sleep 10
   deploy:
     runs-on: ubuntu-slim
+    needs: [build, test]
     steps:
       - run: echo "using environment variable"
       - run: echo "region is $AWS_REGION"
