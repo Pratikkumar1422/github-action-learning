@@ -29,6 +29,9 @@ jobs:
         with:
           node-version: 18
       - run: node --version
+      - run: |
+          echo "sleeping for 10 seconds before deploy"
+          sleep 10
   deploy:
     runs-on: ubuntu-slim
     steps:
